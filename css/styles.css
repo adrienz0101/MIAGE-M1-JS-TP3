@@ -1,0 +1,101 @@
+table {
+    border: 1px solid black;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tr,
+td {
+    border: 1px solid black;
+}
+
+td {
+    padding: 5px;
+}
+
+tr:hover {
+    background-color: #ccffcc;
+}
+
+.btDelete{
+	text-align: center
+}
+
+/*input:valid {
+    background-color: lightGreen;
+}*/
+
+.bordureRouge {
+    border: 2px dashed red;
+}
+.delete{
+	background: black;
+	border: 1px solid black;
+	cursor: pointer;
+	font-weight: bold;
+	padding: 3px 8px;
+	border-radius: 3px;
+	color: white;
+}
+
+.delete:hover{
+background: #ff3333;
+border: 1px solid #ff3333;
+color: white;
+}
+
+input{
+	    background-color: #eee;
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	outline: none;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+
+	border: 0px ;
+	color: #555;
+	font: 95% Arial, Helvetica, sans-serif;
+	-webkit-box-shadow: inset 0px 0px 8px -5px rgba(0,0,0,0.75);
+-moz-box-shadow: inset 0px 0px 8px -5px rgba(0,0,0,0.75);
+box-shadow: inset 0px 0px 8px -5px rgba(0,0,0,0.75);
+	padding: 5px;
+
+	margin-top: 5px;
+	margin-left: 10px;
+}
+
+input:focus{
+	background: #d9d9d9;
+}
+
+.page{
+	background: #008060;
+	color: white;
+	border: 1px solid white;
+	cursor: pointer;
+	padding: 15px;
+	border-radius: 5px;
+
+}
+
+.page:hover{
+	background: white ;
+	color: #008060;
+	border: 1px solid #008060;
+	cursor: pointer;
+	padding: 15px;
+	border-radius: 5px;
+
+}
+.numpage{
+	text-align: center;
+	margin:20px;
+}
+
+.pageActuel{
+	border: 0px;
+	background: none;
+}

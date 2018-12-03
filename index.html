@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="lib/vue.min.js"></script>
+    <script src="lib/lodash.min.js"></script>
+    <script src="lib/vue-material/vue-material.min.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="lib/vue-material/vue-material.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>JS Bin</title>
+</head>
+
+<body>
+    <div id="app">
+        <form v-on:submit="ajouterRestaurant">
+            <label>
+                <input type="text" name="nom" required v-model="nom" placeholder="Nom">
+            </label>
+            <label>
+                <input type="text" name="cuisine" required v-model="cuisine" placeholder="Cuisine">
+            </label>
+
+            <button>Ajouter</button>
+        </form>
+        <p>
+            <label>
+            Rechercher : 
+            <input type="text" 
+                   v-on:input="chercherRestaurants"
+                   v-model="name"
+                   placeholder="tap ..."
+            > 
+            <br> 
+            Nombre par page : {{pagesize}}<input v-on:input="affichagePage" v-model="pagesize" type="range" min="5" max="100" value="10" class="slider" id="myRange">
+            </label>
+
+        </p>
+<h1>Nombre de restaurants : {{nbRestaurants}}</h1>
+        <table>
+            <tr>
+                <th>Nom</th>
+                <th>Cuisine </th>
+                <th>Delete</th>
+            </tr>
+            <tbody>
+                <tr v-for="r,index in restaurants" v-bind:style="{backgroundColor:getColor(index)}"><!-- v-bind:class="{bordureRouge:(index === 2)}"-->
+                    <td>{{r.name}}</td>
+                    <td> {{r.cuisine}}</td>
+                    <td class="btDelete"> <button class="delete"  v-on:click="supprimerRestaurant(index)">X</button> </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="numpage">
+        <button class="page" v-on:click="pagePrecedente">Page précédente</button>
+        <button class="page" v-on:click="premierePage">1</button>
+        <button class="pageActuel">Page {{ page }}</button>
+        <button class="page" v-on:click="dernierePage">{{ lastPage }}</button>
+        <button class="page" v-on:click="pageSuivante">Page suivante</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
